@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get '/recipes', to: 'recipes#index'
-  post '/recipes', to: 'recipes#create'
+  resources :recipes, only: [:index, :create]
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
   post '/login', to: 'sessions#create'
